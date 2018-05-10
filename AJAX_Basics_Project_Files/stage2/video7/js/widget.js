@@ -39,4 +39,3 @@ roomRequest.onreadystatechange = function () {
 };
 roomRequest.open('GET', '../data/rooms.json');
 roomRequest.send();
-
