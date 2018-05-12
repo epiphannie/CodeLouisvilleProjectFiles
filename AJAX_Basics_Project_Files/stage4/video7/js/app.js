@@ -1,17 +1,11 @@
 $(document).ready(function() {
 
-
- $('button').click(function () {
-    // highlight the button
-    // not AJAX, just cool looking
-    $("button").removeClass("selected");
-    $(this).addClass("selected");
-
-    // the AJAX part
+  $('form').submit( function (evt) {
+    evt.preventDefault();
+    var request = $('#search').val();
     var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
-    var animal = $(this).text();
     var flickrOptions = {
-      tags: animal,
+      tags: request,
       format: "json"
     };
     function displayPhotos(data) {
@@ -25,7 +19,13 @@ $(document).ready(function() {
       $('#photos').html(photoHTML);
     }
     $.getJSON(flickerAPI, flickrOptions, displayPhotos);
+  }); //end submit
 
-  }); // end click
 
 }); // end ready
+
+//replace button click event with form submit event
+//respond to submit event
+//elect the form, add adubmit method, which will run the programming
+//stop the form from submitting
+//retrieve the value in the input field. Select th
