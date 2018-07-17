@@ -1,6 +1,0 @@
-/* Structural Pseudo-classes------------------ */
-
-div:nth-last-of-type(even){
-  background: #52bab3;
-  color: white;
-}
