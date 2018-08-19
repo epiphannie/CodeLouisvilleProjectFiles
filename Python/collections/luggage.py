@@ -10,7 +10,13 @@
 #     else:
 #         print("Hi, no name!")
 #
+# packer(name="Kenneth", num=42, spanish_inquisition=None)
 # unpacker(**{'last_name': 'McHealy', 'first_name': 'Ann'})
+#
+# course_minutes = {"Python Basics": 232, "Djengo Basics": 237, "Flask Basics": 189, "Java Basics": 133}
+#
+# for course, minutes in course_minutes.items():
+#     print("{} is {} minutes long".format(course, minutes))
 
 # def word_count(string):
 #     word_list = string.lower().split()
@@ -68,11 +74,72 @@
 #
 # print most_courses({'Andrew Chalkley': ['jQuery Basics', 'Node.js Basics'],
 #     'Kenneth Love': ['Python Basics', 'Python Collections', 'something else']})
+#
+# def multiply(*args):
+#     print(args)
+#     total = 1
+#     for num in args:
+#         total = num * total
+#     print(total)
+#     return total
+# multiply(2, 3, 4, 5)
 
-def multiply(*args):
-    print args
-    total = 1
-	for num in args:
-        total = num * total
-    return total
-multiply((2, 3, 4, 5)
+# COURSES = {
+# "Python Basics": {"Python", "functions", "variables",
+# "booleans", "integers", "floats",
+# "arrays", "strings", "exceptions",
+# "conditions", "input", "loops"},
+# "Java Basics": {"Java", "strings", "variables",
+# "input", "exceptions", "integers",
+# "booleans", "loops"},
+# "PHP Basics": {"PHP", "variables", "conditions",
+# "integers", "floats", "strings",
+# "booleans", "HTML"},
+# "Ruby Basics": {"Ruby", "strings", "floats",
+# "integers", "conditions",
+# "functions", "input"}
+# }
+#
+# def covers(set):
+#     list = []
+#     for course, contents in COURSES.items():
+#         if len(set) == len(contents & set):
+#             print(course)
+#             list.append(course)
+#             print(list)
+#         else:
+#             continue
+#     return list
+#
+# covers({'strings'})
+
+# def move(player, direction):
+#     x, y, hp = player
+#     xd, yd = direction
+#     print(x + xd)
+#     print(y + yd)
+#     if x + xd == -1 or x + xd == 10:
+#         hp -= 5
+#     else:
+#         x += xd
+#     if y + yd == -1 or y + yd == 10:
+#         hp -= 5
+#     else:
+#         y += yd
+#     return x, y, hp
+# print(move((0, 9, 5), (0, 1)))
+
+TILES = ('-', ' ', '-', ' ', '-', '||',
+    '_', '|', '_', '|', '_', '|', '||',
+    '&', ' ', '_', ' ', '||',
+    ' ', ' ', ' ', '^', ' ', '||', 'end'
+)
+
+for tile in TILES:
+    if tile == "||":
+        output = ""
+        line_end = "\n"
+    else:
+        output = tile
+        line_end = ""
+    print(output, end = line_end)
