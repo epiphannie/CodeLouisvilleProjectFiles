@@ -129,17 +129,31 @@
 #     return x, y, hp
 # print(move((0, 9, 5), (0, 1)))
 
-TILES = ('-', ' ', '-', ' ', '-', '||',
-    '_', '|', '_', '|', '_', '|', '||',
-    '&', ' ', '_', ' ', '||',
-    ' ', ' ', ' ', '^', ' ', '||', 'end'
-)
+# TILES = ('-', ' ', '-', ' ', '-', '||',
+#     '_', '|', '_', '|', '_', '|', '||',
+#     '&', ' ', '_', ' ', '||',
+#     ' ', ' ', ' ', '^', ' ', '||', 'end'
+# )
+#
+# for tile in TILES:
+#     if tile == "||":
+#         output = ""
+#         line_end = "\n"
+#     else:
+#         output = tile
+#         line_end = ""
+#     print(output, end = line_end)
 
-for tile in TILES:
-    if tile == "||":
-        output = ""
-        line_end = "\n"
-    else:
-        output = tile
-        line_end = ""
-    print(output, end = line_end)
+# def __str__(pattern):
+#     strepresentation = ''
+#     for item in pattern:
+#         if item == ".":
+#             strepresentation += "dot-"
+#         elif item == "_":
+#             strepresentation += "dash-"
+#     result = strepresentation[:-1]
+#     return result
+#
+# print(__str__(['.', '.', '.']))
+# print(__str__([]))
+# print(__str__(['.', '_', '.']))
