@@ -1,0 +1,53 @@
+PEP - Python Enhancement Proposal
+
+PEP 8: How python code should look
+
+top level functions should have two blank lines between them
+tab = 4 spaces
+
+blank line between the methods in in a class
+no blank line between the class declaration and the first method
+
+two blank lines between classes and other items
+
+spaces after every comma and around operators that are not inside of a function call
+
+no space between function name and parentheses, no space inside either
+
+two spaces before an inline comment
+
+imports are the top line of the file
+libraries should each be imported in their own line
+
+several arguments should all be on the same line
+
+function names and variable names are all lower case with underscores
+
+classes should start with an uppercase letter
+
+flake8 can be used to review spacing/naming
+
+
+PEP 20: The Zen of Python -- import this in a repl
+
+PEP 257: Docstring is at the beginning of a class/method/function that explains what it's for
+
+"""content of the docstring"""
+help(file.functionname)
+
+Docstrings that can fit on one line, should. Docstrings that can't, have their final triple quotes on their own line
+
+Logging:
+import logging
+
+logging.basicConfig(filename='file name', level = logging.DEBUG)
+there are six log levels. The level listed in the function is the lowest level that will trigger a log.
+
+logging.info(), logging.debug() the type of message triggers a warning of that level
+
+
+Python Debugger (PDB):
+import pdb
+pdb.set_trace() <<--starts the debugger at a given point
+next <<--will advance to the next line of the code. Can also use 'n'
+'q' to quit pdb
