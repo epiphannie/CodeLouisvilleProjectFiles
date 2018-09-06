@@ -1,0 +1,39 @@
+http://docs.python-tablib.org/en/latest/ for good libraries
+
+to Read CSV:
+import csv
+
+with open('filename.csv', newline='') as placeholdername:
+   xyzreader = csv.DictReader(csvfile, delimiter='delimiter')
+
+
+  rows = list(artreader)
+  for row in rows
+    print(row['key'])
+
+to Write CSV:
+import csv
+
+with open('filename.csv', 'a') as csvfile: (the a is for append)
+  fieldnames = ['first_name', 'last_name', 'topic']
+  xyzwriter = csv.DictWriter(csvfile, fieldnames=fieldnames)
+
+  xyzwriter.writeheader()
+  xyzwrite.writerow({
+    'first_name': 'Kenneth',
+    'last_name': 'Love',
+    'topic': 'Python'
+  })
+
+
+to Read JSON:
+import json
+
+with open('filename.json) as placeholdername
+  xyz = json.load(placeholdername) //for a file-like JSON
+  xyz = json.loads(placeholdername) //for a string with embedded JSON
+  print(xyz['key'])
+
+
+to Write JSON
+dump / dumps
