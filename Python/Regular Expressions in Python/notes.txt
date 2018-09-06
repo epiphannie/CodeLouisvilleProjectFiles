@@ -1,0 +1,32 @@
+\w represents any Unicode word character
+\W represents anything that isn't a Unicode character
+\s matches whitespace
+\S not whitespace
+\d any number from 0-9
+\D not a number
+\b matches a word boundary
+\B not a word boundary
+\t tab character
+
+{3} exactly 3 times
+{,3} up to 3 times
+{3,} 3 or more times
+{3,5} 3, 4 or 5 times
+
+? optional (0 or 1 times)
+* occurs at least 0 times
++ occurs at least once
+
+[] any character will be looked for, leave out duplicates
+[a-z] any lowercase letter a-z
+[^2] not 2
+
+re.IGNORECASE, re.I
+re.VERBOSE, re.X <- ignores all white space in the expression unless given explicity with \s or a space in a [set]
+re.MULTILINE, re.M matches immediately at the start of a new line
+
+multiple flags separated with pipe character
+
+^beginning of the string
+&end of the string
+when modified by multiline, this is equivalent to the beginning/end of each line
