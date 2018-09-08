@@ -1,0 +1,98 @@
+import os
+os.getcwd() current working directory
+os.chdir('..') change current working directory
+
+.. move up
+. current
+
+os.path.isabs("path") True/False, checks for an absolutely path
+
+os.path.join(os.getcwd(), '..', 'samplename') creates the path with the given pieces
+
+os.listdir() returns everything in the current directory
+os.listdir('nameofdirectory')
+list(os.scandir()) returns a list of dir entries, can be called by index
+
+files = list.os(scandir())
+files[3].name  #returns nameofdirectory
+files[3].is_file()  #returns True/False
+files[3].stat()  #returns file stats. st_size = size of the files in bytes
+files.close() to free up memory
+
+os.walk('filename') returns root, dirs, files
+
+***
+def treewalker(start):
+  total_size = 0
+  total_files = 0
+
+  for root, dirs, files in os.walk(start):
+    subtotal = sum(
+      os.path.getsize(os.path.join(root, name)) for name in files
+    )
+    total_size += subtotal
+    file_count = len(files)
+    total_files += file_count
+    print(root, 'consumes', end=' ')
+    print(subtotal, end=' ')
+    print('bytes in', file_count, 'non-directory files')
+  print(start, 'contains', total_files, 'file with a combined size of', total_size, 'bytes.')
+***
+
+import pathlib
+path = pathlib.PurePath(oc.cwd())
+path2 = path / 'examples' / 'paths.txt'
+path2  #full path '/Users/Kenneth/Projects/file_systems/examples/paths.txt'
+path2.parts returns a tuple of all of the parts of the system
+path2.root = forward slash
+path2.parents[2] = '/Users/Kenneteh/Projects'
+path2.name = 'paths.txt'
+path2.suffix = '.txt'
+
+
+
+** making files and directories and changing them
+import os
+
+os.path.exists('filename or directory name') True/False
+
+os.mknod() <-- doesn't work on mac os unless you're running as root. Will make files for you
+
+open('filename', 'a'/'w') / filename.close()
+
+os.mkdir('directoryname') / os.mkdirs('directory/subdirect/subsubdirect', exist_ok=True)
+
+os.rename('oldfile', 'newfile') <<--directory, some cross-platform issues
+os.replace('old', 'new') <-- better than rename
+os.renames('oldfile', 'newdir/newsubdir') <<--- will create the file path in addition to the directory
+
+** delete files
+
+os.remove('filename')
+os.rmdir('directory path') <--must be empty in order to remove
+
+for thing in os.scandir('directory'):
+  if thing.isfile():
+    os.remove(thing.path)
+os.removedirs() <--will stop as soon as error
+
+pip3 install send2trash
+
+from send2trash import send2trash
+send2trash('file')
+
+** temp files
+import tempfile
+
+with tempfile.TemporaryDirectory() as tmpdirname:
+  print("Created temporary directory names {}".format(tmpdirname))
+  with open(os.path.join(tmpdirname, 'temp__file.txt'), 'w') as f:
+    f.write('hello'\n)
+  input()
+
+when you hit 'enter' inside the input() the file is deleted
+
+with tempfile.TemporaryFile() as tempfile:
+  tempfile.write("hello")
+  tempfile.seek(0)
+  tempfile.read()
