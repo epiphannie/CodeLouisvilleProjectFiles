@@ -32,4 +32,3 @@ line = re.compile(r'''
 #print(line.search(data).groupdict())
 for match in line.finditer(data):
     print('{first} {last} <{email}>'.format(**match.groupdict()))
-
