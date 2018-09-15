@@ -1,0 +1,8 @@
+find data set
+get it to you
+read it into python
+write it to SQL
+manipulate it at least some in SQL
+manipulate it if you want in python
+send in back to the database
+Visualize!

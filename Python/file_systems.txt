@@ -96,3 +96,5 @@ with tempfile.TemporaryFile() as tempfile:
   tempfile.write("hello")
   tempfile.seek(0)
   tempfile.read()
+
+tempfile.NamedTemporaryFile()
